@@ -1,0 +1,4 @@
+/* Hand-tool feedback is confined to the enlarged viewer; poster layout is unchanged. */
+.imageDialog.viewerPicking.temporaryPan .imageScroller{cursor:grab}
+.imageDialog .imageScroller.drag,.imageDialog.viewerPicking .imageScroller.drag{cursor:grabbing}
+.imageDialog.temporaryPan .imageScroller{user-select:none}

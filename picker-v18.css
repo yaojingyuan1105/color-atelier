@@ -1,0 +1,4 @@
+/* Auto margins center small images but resolve to zero on overflowing axes.
+   No transform: scrolling can still reach every original pixel when zoomed. */
+.imageDialog .imageScroller{display:flex}
+.imageDialog .imageScroller img{flex:none;margin:auto}

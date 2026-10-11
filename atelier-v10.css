@@ -1,0 +1,126 @@
+
+/* v10: character-led fashion / sweets collage */
+.poster{--lime:#c5ec21;--pink:#f5008f;--ink:#171320}
+.masthead{min-height:107px;padding-top:17px;padding-bottom:17px;background:linear-gradient(103deg,#fff9ee 0 65%,#fff02a 65% 67%,#fff9ee 67%);overflow:visible}
+.wordmark{position:relative;font:bold italic 44px/.85 Georgia,serif;letter-spacing:-3px;isolation:isolate;padding:5px 25px 6px 0;text-shadow:none}
+.wordmark .logoColor,.wordmark .logoAtelier{display:inline-block;font:inherit;letter-spacing:inherit;margin:0;text-align:left;paint-order:stroke fill;-webkit-text-stroke:5px #fff9ee;filter:drop-shadow(2px 3px 0 #171320)}
+.wordmark .logoColor{color:#ed0088;rotate:-5deg;translate:0 -3px}
+.wordmark .logoAtelier{color:#171320;rotate:2deg;margin-left:4px}
+.wordmark .logoHeart{display:block;position:absolute;right:3px;top:-7px;width:35px;height:35px;rotate:17deg;z-index:-1;color:#171320;font:42px Georgia;-webkit-text-stroke:2px #fff9ee;text-shadow:3px 3px #f5008f}
+.wordmark:after{content:'';position:absolute;left:13px;right:0;bottom:6px;height:4px;background:#c5ec21;rotate:-4deg;z-index:-1}
+.wordmark .logoSub{display:block;font:700 10px/1.2 'Yu Gothic',sans-serif;letter-spacing:3px;color:#171320;text-align:left;margin:15px 0 0 5px}
+.sourceTitle,.paletteTitle{font:bold italic 43px/.95 Georgia,serif;letter-spacing:-2px;color:#171320;paint-order:stroke fill;-webkit-text-stroke:4px #fff9ee;text-shadow:3px 3px #f5008f}
+.sourceTitle{margin-bottom:24px}
+.bigType{display:none}
+.appearanceType{position:absolute;inset:170px auto auto 9px;writing-mode:vertical-rl;rotate:180deg;font:900 clamp(55px,6.5vw,92px)/.84 Impact,'Arial Narrow',sans-serif;letter-spacing:-3px;color:#004e69;opacity:.2;pointer-events:none;z-index:-2;max-height:700px}
+.appearanceEcho{position:absolute;bottom:39px;left:32%;right:1%;font:900 clamp(40px,6vw,82px)/.8 Impact,sans-serif;letter-spacing:-2px;color:#5c003c;opacity:.15;pointer-events:none;z-index:-2}
+.hero .verticalType{display:none}
+.business{position:relative;isolation:isolate;background:#fff9ee;padding:12px 15px 12px 19px!important;rotate:-2deg;box-shadow:5px 6px #f5008f,-4px -4px #171320;transition:transform .38s cubic-bezier(.2,1.5,.4,1),box-shadow .35s,rotate .35s;margin-top:21px;overflow:visible}
+.business:before{width:8px;background:linear-gradient(#171320 0 38%,#f5008f 38% 65%,#c5ec21 65%);left:-5px}
+.business:after{inset:5px;border:1px solid #17132050;pointer-events:none}
+.business:hover,.business:focus-visible{transform:translateY(-5px);rotate:-.4deg;box-shadow:8px 10px #f5008f,-4px -4px #171320}
+.business:focus-visible{outline:3px solid #c5ec21;outline-offset:6px}
+.nameFull{font:900 clamp(18px,6.7cqi,29px)/1.3 'Yu Gothic','Noto Sans CJK JP','Microsoft YaHei',sans-serif;white-space:nowrap;letter-spacing:-1px;border-bottom:0;padding:0 0 5px;color:#171320;text-shadow:1px 1px #c5ec21}
+.nameFull .middle{color:#f5008f;font-style:italic}
+.signatureRow{display:block;position:relative;padding:0 0 8px}
+.ryukiSignature{font:700 clamp(25px,9.4cqi,40px)/1 'Brush Script MT','Segoe Script',cursive;letter-spacing:-1px;white-space:nowrap;color:#789915;paint-order:stroke fill;-webkit-text-stroke:2px #fff9ee;filter:drop-shadow(1px 2px 0 #171320);display:block;rotate:-2deg}
+.signatureRole{font:700 8px/1 sans-serif;letter-spacing:2px;display:block;text-align:right;border:0;margin-top:7px;color:#171320}
+.signatureRow:after{content:'';position:absolute;bottom:0;left:0;width:70%;height:3px;background:#f5008f;transform-origin:left;transform:scaleX(.3) rotate(-2deg);transition:transform .45s}
+.business:hover .signatureRow:after,.business:focus-visible .signatureRow:after{transform:scaleX(1) rotate(-2deg)}
+.tagEyelet{right:14px;top:-11px;width:16px;height:16px;background:#fff9ee;border:2px solid #171320;box-shadow:2px 2px #c5ec21}
+.source{transition:transform .4s cubic-bezier(.2,1.3,.4,1),rotate .4s,box-shadow .4s}
+@media(hover:hover){.source:hover{transform:translateY(-4px);rotate:-.3deg;box-shadow:7px 11px #171320}.source:hover .zoomHint{opacity:1}}
+.source:focus-within{transform:translateY(-3px);box-shadow:7px 10px #171320}
+.source.photoArrive{animation:photoLand .55s ease-out}
+@keyframes photoLand{0%{translate:0 -10px;opacity:.65}65%{translate:0 2px}100%{translate:0 0;opacity:1}}
+.atelierDraft{background:#fff9eeec;rotate:-5deg;border:1.5px solid #171320;box-shadow:3px 4px #7138f0;transition:transform .4s,rotate .4s;animation:draftRest 9s ease-in-out infinite;animation-delay:-3s}
+.atelierDraft:hover{transform:translateY(-4px);rotate:-2deg}
+.atelierDraft svg{overflow:visible}
+.atelierDraft path{stroke-dasharray:650;stroke-dashoffset:0}
+.atelierDraft.draftDraw path{animation:draftInk 1.7s ease-out both}
+.atelierDraft.draftDraw .fashionInk{animation-delay:.5s}
+.atelierDraft .fashionInk{stroke:#f5008f;stroke-width:2.2}
+@keyframes draftInk{from{stroke-dashoffset:650}to{stroke-dashoffset:0}}
+@keyframes draftRest{0%,64%,100%{translate:0 0}72%{translate:0 -3px}82%{translate:0 1px}}
+/* Static sticker border; separate inner parts retain their own motion. */
+.sweet{position:absolute;pointer-events:none;z-index:4;filter:drop-shadow(2px 4px 0 #17132040);overflow:visible;transform-box:fill-box}
+.sweet .stickerEdge{stroke:#fff9ee;stroke-width:8;stroke-linejoin:round;paint-order:stroke fill}
+.sweetChocolate{width:94px;height:140px;left:-13px;top:25px;rotate:-17deg;animation:chocoNod 8.4s ease-in-out infinite;animation-delay:-3.1s}
+.sweetDonut{width:104px;height:88px;right:-7px;bottom:122px;rotate:15deg;animation:donutHop 7.3s ease-in-out infinite;animation-delay:-2.4s}
+.sweetPop{width:89px;height:159px;right:-15px;bottom:20px;rotate:16deg;animation:lollyRock 9.3s ease-in-out infinite;animation-delay:-5.1s;transform-origin:50% 85%}
+.sweetChocolate .wrapperFold{transform-origin:45px 91px;animation:wrapperWink 6.8s ease-in-out infinite}
+@keyframes chocoNod{0%,70%,100%{translate:0 0}78%{translate:0 -4px}86%{translate:0 1px}}
+@keyframes donutHop{0%,64%,100%{translate:0 0;transform:rotate(0)}72%{translate:0 -7px;transform:rotate(-7deg)}82%{translate:0 1px;transform:rotate(3deg)}}
+@keyframes lollyRock{0%,60%,100%{transform:rotate(0)}72%{transform:rotate(-7deg)}83%{transform:rotate(4deg)}}
+@keyframes wrapperWink{0%,75%,100%{transform:rotate(0)}82%{transform:rotate(-8deg)}90%{transform:rotate(3deg)}}
+.heroHeart{animation:heartPop 5.4s ease-in-out infinite!important;animation-delay:-1s!important}
+.heroSpark{animation:sparkPop 6.1s ease-in-out infinite!important;animation-delay:-2.9s!important}
+.heroSmallSpark{animation:sparkPop 7.7s ease-in-out infinite!important;animation-delay:-5.2s!important}
+.perfume{animation:perfumeWag 6.9s ease-in-out infinite!important;animation-delay:-2.3s!important}
+.perfume .mist{animation:mistPuff 3.9s ease-out infinite;transform-origin:40px 16px}
+.sourceArrow{animation:arrowPoint 6.3s ease-in-out infinite!important;animation-delay:-3.5s!important}
+.sourceFlourish{animation:inkRipple 6.8s ease-in-out infinite!important}
+.paletteHeart{animation:heartPop 7.2s ease-in-out infinite!important;animation-delay:-4s!important}
+.threadScissors{animation:perfumeWag 7.9s ease-in-out infinite!important}
+.threadScissors .blade{transform-origin:32px 35px;animation:scissorSnip 5.6s ease-in-out infinite}
+.heroSpark path,.heroSmallSpark path{transform-origin:center;transform-box:fill-box}
+@keyframes heartPop{0%,55%,100%{transform:translate(0,0) rotate(0) scale(1)}62%{transform:translate(0,2px) rotate(-5deg) scale(.89,1.03)}71%{transform:translate(0,-6px) rotate(7deg) scale(1.13)}82%{transform:translate(0,0) rotate(-3deg) scale(.98)}}
+@keyframes sparkPop{0%,58%,100%{transform:rotate(0) scale(1);opacity:1}67%{transform:rotate(-9deg) scale(.88);opacity:.65}78%{transform:rotate(8deg) scale(1.18);opacity:1}89%{transform:rotate(-2deg) scale(.98)}}
+@keyframes perfumeWag{0%,63%,100%{transform:rotate(0) translateY(0)}73%{transform:rotate(-8deg) translateY(-4px)}84%{transform:rotate(5deg) translateY(0)}}
+@keyframes mistPuff{0%,48%,100%{opacity:.25;translate:0 0}60%{opacity:1;translate:4px -3px}78%{opacity:0;translate:8px -5px}}
+@keyframes arrowPoint{0%,61%,100%{transform:translate(0,0) rotate(0)}73%{transform:translate(-6px,6px) rotate(-5deg)}85%{transform:translate(1px,-1px) rotate(2deg)}}
+@keyframes scissorSnip{0%,66%,100%{transform:rotate(0)}74%{transform:rotate(-14deg)}82%{transform:rotate(3deg)}}
+.poseBurst{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:visible}
+.burstParticle{position:absolute;width:36px;height:38px;opacity:0;animation:heartBurst 1.05s cubic-bezier(.16,.7,.25,1) both;animation-delay:var(--delay);filter:drop-shadow(1px 2px 0 #fff9ee)}
+.burstParticle svg{width:100%;height:100%;overflow:visible;fill:none;stroke:var(--burst-color,#f5008f);stroke-width:3;stroke-linejoin:round}
+@keyframes heartBurst{0%{opacity:0;transform:translate(0,8px) scale(.25) rotate(-15deg)}18%{opacity:1;transform:translate(calc(var(--dx)*.2),-6px) scale(1.2) rotate(7deg)}40%{opacity:1;transform:translate(calc(var(--dx)*.5),-15px) scale(.95) rotate(-4deg)}100%{opacity:0;transform:translate(var(--dx),-48px) scale(.75) rotate(18deg)}}
+.poster .samples .swatchGroup-primary .swatch{grid-template-columns:59% 41%;min-height:108px}
+.poster .samples .swatchGroup-primary .swatch .paint{height:108px}
+.poster .samples .swatchGroup-accent .swatch .values b{font-size:13px}
+.poster .samples .swatchGroup-accent .swatch .values small{font-size:10px}
+.business,.source,.atelierDraft{will-change:auto}
+@media(max-width:650px){
+ .masthead{min-height:0;padding:13px 15px 10px;gap:9px}
+ .wordmark{font-size:34px;letter-spacing:-2px;padding-right:23px}
+ .wordmark .logoSub{margin-top:12px;font-size:9px}
+ .wordmark .logoHeart{font-size:32px;right:0}
+ .nav button{min-height:31px}
+ .workgrid{padding-top:16px}
+ .poseFrame{height:clamp(322px,112cqi,395px);width:100%;max-width:none}
+ .business{margin-top:16px;width:min(100%,344px);padding:10px 14px!important}
+ .nameFull{font-size:clamp(18px,6.2cqi,24px);letter-spacing:-.8px}
+ .ryukiSignature{font-size:clamp(27px,8.8cqi,37px)}
+ .signatureRole{font-size:8px;margin-top:4px}
+ .sourceColumn{padding-top:112px;padding-bottom:145px}
+ .speech{top:12px;height:88px}.speech svg{height:88px}.speechText{margin-top:18px;font-size:12px}
+ .sourceTitle{font-size:35px;margin-bottom:17px}
+ .sourceArrow{top:83px;width:49px;height:49px}
+ .sourceColumn:before{top:145px}
+ .sweetChocolate{width:71px;height:106px;left:0;top:23px}
+ .sweetDonut{width:84px;height:70px;bottom:119px;right:-5px}
+ .sweetPop{width:64px;height:115px;right:18px;bottom:14px}
+ .atelierDraft{width:72%;height:101px;bottom:8px;left:2%}
+ .threadScissors{bottom:100px;left:0}
+ .sourceFlourish{width:64%;left:26%;bottom:94px}
+ .appearanceType{top:230px;left:2px;font-size:62px;opacity:.19;max-height:660px}
+ .appearanceEcho{bottom:37px;left:5%;font-size:49px}
+ .heroHeart{left:-5px;top:156px;width:48px}
+ .heroSmallSpark{top:120px;width:31px}.perfume{top:274px;width:37px}
+ .burstParticle{width:29px;height:31px}
+ .poster .samples .swatchGroup-primary .swatch .values b{font-size:16px}
+}
+@media(min-width:651px) and (max-width:1080px){
+ .nameFull{font-size:6.6cqi}.ryukiSignature{font-size:9.2cqi}
+ .sweetChocolate{width:71px;height:106px;top:16px;left:-8px}
+ .sweetDonut{width:82px;height:70px;right:-3px;bottom:122px}
+ .sweetPop{right:-8px;width:72px;height:130px}
+ .wordmark{font-size:37px}
+}
+.viewport.overview .poseFrame{height:570px}
+.viewport.overview .nameFull{font-size:23px}
+.viewport.overview .ryukiSignature{font-size:33px}
+body.motionOff .poster *,body.motionOff .poster *:before,body.motionOff .poster *:after{animation:none!important;transition:none!important}
+body.motionOff .poseBurst{display:none}
+body.motionOff .business:hover,body.motionOff .business:focus-visible,body.motionOff .source:hover,body.motionOff .source:focus-within,body.motionOff .atelierDraft:hover{transform:none;rotate:initial}
+body.pageHidden .poster *,body.pageHidden .poster *:before,body.pageHidden .poster *:after{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){.poster *{animation-duration:.01ms;transition-duration:.01ms}}

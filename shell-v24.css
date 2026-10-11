@@ -1,0 +1,80 @@
+body{background:var(--paper)}
+.review{max-width:none;min-height:100dvh;padding:16px;display:flex;align-items:center;justify-content:center}
+.viewport{flex:none;max-width:100%;overflow:visible}
+.viewport:not(.overview):not(.folded){max-width:1452px}
+.viewport.folded{width:min(760px,100%)}
+.viewport .poster{box-shadow:5px 6px 0 #17131f18}
+.viewport.overview .workgrid{grid-template-columns:300px 370px minmax(0,1fr);gap:24px}
+.viewport.overview .poster .samples .swatchGroup-accent .groupColors{grid-template-columns:repeat(3,minmax(0,1fr))}
+.nav #openSettings:before{content:none}
+.settingsDialog{width:min(460px,calc(100vw - 28px));max-height:calc(100dvh - 36px);overflow:auto;padding:22px;background:var(--paper);color:var(--ink);border:2px solid var(--ink);box-shadow:6px 6px var(--pink)}
+.settingsDialog::backdrop{background:#17131f88}
+.settingsDialog header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
+.settingsDialog h2{font-size:20px;margin:0}
+.settingsDialog button,.settingsDialog select{background:var(--paper);color:var(--ink);border:1px solid var(--ink);padding:9px 12px;font-size:13px;border-radius:0;min-height:38px}
+.settingsControls{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+.settingsControls label{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.settingRow button{width:100%}
+.settingsDialog button[aria-pressed=true]{background:var(--ink);color:var(--yellow);box-shadow:3px 3px var(--cyan)}
+.settingsDialog details{border-top:1px dashed #aaa091;padding:12px 0 2px;font-size:13px;line-height:1.7}
+.settingsDialog summary{cursor:pointer;font-weight:700;width:max-content}
+.settingsDialog summary:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.settingsDialog p{margin:10px 0}
+.launcher .wordmark{width:max-content;max-width:100%;margin:0 auto 32px;text-align:left}
+.launcher p{line-height:1.7;margin:0 0 22px;font-size:14px}
+.launcher{padding:48px 24px;min-height:min(430px,calc(100dvh - 48px));box-shadow:6px 7px 0 #17131f26;position:relative;align-content:center}
+.viewport.folded .launcher{display:grid;justify-items:center}
+#reopen{position:relative}
+.launchBurst{position:absolute;inset:-24px -65px;pointer-events:none}
+.launchBurst .burstParticle{width:32px;height:34px}
+.reopenPop{animation:reopenPop .28s ease-out}
+.stageEntering{animation:stageEnter .28s ease-out both}
+@keyframes reopenPop{0%,100%{transform:scale(1)}35%{transform:scale(.94)}75%{transform:scale(1.025)}}
+@keyframes stageEnter{from{opacity:.35}to{opacity:1}}
+/* A responsive canvas, not an aspect-ratio-locked poster. Art retains its own proportions. */
+.viewport.fluid .poster{width:var(--stage-width);height:var(--stage-height);min-height:0;--grid-height:calc(var(--stage-height) - 86px);--column-height:calc(var(--grid-height) - 56px)}
+.viewport.fluid .masthead{height:82px;min-height:0;padding:10px 26px;flex-wrap:nowrap;gap:16px}
+.viewport.fluid .masthead .wordmark{font-size:40px}
+.viewport.fluid .workgrid{height:var(--grid-height);grid-template-columns:minmax(0,.8fr) minmax(0,1.05fr) minmax(0,1.17fr);gap:26px;padding:18px 30px 38px 18px;align-items:stretch}
+.viewport.fluid .hero{height:100%;display:flex;flex-direction:column;min-height:0;padding:0}
+.viewport.fluid .poseFrame{flex:1;min-height:0;height:0;max-width:none;width:100%}
+.viewport.fluid .nameplateWrap{flex:none;width:min(94%,360px);margin:12px auto 2px}
+.viewport.fluid .business{margin:0}
+.viewport.fluid .poster .nameFull{font-size:clamp(24px,7.8cqi,31px)}
+.viewport.fluid .sweetDonut{bottom:130px;right:3%}
+.viewport.fluid .sourceColumn{height:100%;padding:108px 0 136px;margin:0;min-height:0}
+.viewport.fluid .speech{top:0}
+.viewport.fluid .sourceTitle{font-size:34px;margin-bottom:18px}
+.viewport.fluid .sourceColumn:before{top:152px;height:calc(min(var(--photo-height,240px),calc(var(--column-height) - 415px)) + 70px)}
+.viewport.fluid .imagePreview{height:min(var(--preview-height,240px),calc(var(--column-height) - 415px));min-height:0}
+.viewport.fluid .sourceControls{margin:18px 5px 0}
+.viewport.fluid .auto{min-height:43px}
+.viewport.fluid .statusLine{margin:8px 0 0}
+.viewport.fluid .atelierDraft{bottom:0;height:90px;width:82%;left:5%}
+.viewport.fluid .sourceFlourish{bottom:55px;height:64px;left:36%;width:70%}
+.viewport.fluid .threadScissors{bottom:60px;width:43px;height:43px}
+.viewport.fluid .sweetPop{bottom:0;right:8%}
+.viewport.fluid .paletteColumn{height:100%;padding:20px 0 0;display:flex;flex-direction:column;min-height:0}
+.viewport.fluid .paletteTitle{font-size:40px;flex:none;margin:0 0 0 12px;line-height:1}
+.viewport.fluid .bookWrap{flex:1;min-height:0;margin:18px 4px 0 7px}
+.viewport.fluid .book{height:100%;padding:14px 16px 14px 25px;display:flex;flex-direction:column;min-height:0}
+.viewport.fluid .bookMeta{flex:none;min-height:42px;padding-bottom:8px}
+.viewport.fluid .bookBody{flex:1;min-height:0}
+.viewport.fluid #automaticPane{height:100%;display:flex;flex-direction:column}
+.viewport.fluid .ratio{flex:none;height:20px;margin-top:10px}
+.viewport.fluid .ratioNote{flex:none;margin:7px 0 8px}
+.viewport.fluid .samples{flex:1;min-height:0;max-height:none;overflow:auto}
+.viewport.fluid .bookActions{flex:none;margin-top:12px}
+.viewport.fluid .swatchGroup{margin-bottom:10px}
+.viewport.fluid .swatchGroup:last-child{margin-bottom:0}
+.viewport.fluid .swatchGroup h3{font-size:12px;margin:0 0 7px}
+.viewport.fluid .poster .samples .swatchGroup-primary .swatch{min-height:80px}
+.viewport.fluid .poster .samples .swatchGroup-primary .swatch .paint{height:80px;min-height:80px}
+.viewport.fluid .poster .samples .swatchGroup-secondary .swatch .paint{height:55px}
+.viewport.fluid .poster .samples .swatchGroup-accent .swatch .paint{height:34px}
+.viewport.fluid .poster .samples .swatchGroup .swatch .values{padding:7px 8px}
+.viewport.fluid .paletteCheck{top:-4px;right:3px}
+.viewport.fluid .paletteHeart{bottom:-24px;right:2px;width:43px;height:45px}
+.viewport.fluid .seamBridge{bottom:94px}
+.viewport.fluid .bigType{font-size:clamp(70px,8vw,140px);bottom:36px}
+@media(max-width:650px){.review{padding:14px}.masthead{flex-wrap:wrap}.nav{gap:8px;justify-content:space-between}.nav .return{margin-left:0}.launcher{padding:30px 16px;min-height:min(390px,calc(100dvh - 28px))}.launcher .wordmark{font-size:clamp(28px,7.5vw,39px);margin:0 auto 28px}.settingsDialog{padding:18px}.settingsDialog h2{font-size:18px}}

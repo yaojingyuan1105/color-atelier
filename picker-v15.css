@@ -1,0 +1,70 @@
+/* Manual picks are separate from whole-image statistics. */
+.pickerTools{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin:13px 0 3px;position:relative;z-index:6}
+.pickerTools button,.pickActions button,.pickItem button{font:700 12px/1.3 sans-serif;border:1.5px solid #17131f;background:#fff9ee;color:#17131f;padding:8px 11px;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.pickerTools button:hover,.pickActions button:hover,.pickItem button:hover{transform:translateY(-2px);box-shadow:2px 3px #f5008f}
+.pickerTools button:disabled,.pickActions button:disabled{opacity:.45;cursor:default;transform:none;box-shadow:none}
+.pickerTools #togglePicker[aria-pressed=true]{background:#17131f;color:#fff02a;box-shadow:3px 3px #f5008f}
+.pickerHint{font-size:11px;line-height:1.6;margin:8px 0 0;color:#4c4150}
+.pickerHint[hidden],.pickLens[hidden],.pickMarker[hidden]{display:none!important}
+.pickPanel{position:relative;z-index:3;background:#fff9ee;border:2px solid #17131f;box-shadow:4px 5px #f5008f;margin-top:20px;padding:13px;rotate:-.5deg}
+.pickPanel h3{font:italic 700 24px Georgia;margin:0 0 3px}
+.pickPanel .pickMeta{font:11px/1.5 sans-serif;color:#5a4f5f;margin:0 0 11px}
+.pickList{display:flex;flex-wrap:wrap;gap:8px;max-height:235px;overflow:auto;padding:2px 2px 8px}
+.pickEmpty{font:12px/1.7 sans-serif;color:#67596b;margin:3px 0 8px}
+.pickItem{display:flex;align-items:stretch;border:1px solid #17131f;background:white;min-width:0}
+.pickItem button{border:0;background:transparent;padding:6px;font:700 11px monospace;box-shadow:none!important}
+.pickItem .pickCopy{display:flex;align-items:center;gap:6px}
+.pickChip{display:inline-block;width:24px;height:30px;border:1px solid #17131f;flex-shrink:0;background:var(--picked)}
+.pickActions{display:flex;gap:7px;flex-wrap:wrap;border-top:1px dashed #b7a6b7;padding-top:10px}
+.pickActions button{padding:7px 9px}
+.pickCode{font:700 16px/1.4 monospace;border:1px solid #807580;border-radius:5px;padding:2px 7px;cursor:pointer;white-space:nowrap;vertical-align:baseline;text-shadow:none;transition:transform .15s}
+.pickCode:hover{transform:translateY(-1px)}
+.speechText.pickSpeech{font-size:14px!important;line-height:1.7!important}
+.pickLens{position:fixed;z-index:1000;pointer-events:none;width:110px;padding:6px;background:#fff9ee;border:2px solid #17131f;box-shadow:4px 4px #f5008f;color:#17131f;font:700 11px monospace;text-align:center}
+.pickLens canvas{display:block;width:99px;height:99px;image-rendering:pixelated;margin:auto;background:repeating-conic-gradient(#ddd 0% 25%,white 0% 50%) 0/12px 12px}
+.pickLens .lensGrid{position:relative}.pickLens .lensGrid:after{content:'';position:absolute;left:50%;top:50%;width:9px;height:9px;transform:translate(-50%,-50%);border:1px solid white;box-shadow:0 0 0 1px #17131f}
+.pickLens output{display:block;margin-top:6px;min-height:14px}
+.pickMarker{position:fixed;z-index:999;pointer-events:none;width:13px;height:13px;border:2px solid white;outline:1px solid #17131f;border-radius:50%;transform:translate(-50%,-50%)}
+body.picking .poster .source{animation:none!important;transition:none!important}
+body.picking .poster .source:hover,body.picking .poster .source:focus-within{transform:none!important;translate:none!important;scale:none!important}
+body.picking .imagePreview{cursor:crosshair;touch-action:pan-y;outline:2px dashed #f5008f;outline-offset:4px}
+body.picking .zoomHint{display:none}
+@media(max-width:650px){.pickPanel{margin-top:16px}.pickLens{width:92px}.pickLens canvas{width:77px;height:77px}.pickLens .lensGrid:after{width:7px;height:7px}.pickerTools button{padding:9px}.pickItem button{min-height:36px}.pickCode{font-size:15px}}
+@media(prefers-reduced-motion:reduce){.pickerTools button,.pickActions button,.pickItem button,.pickCode{transition:none}}
+
+/* Floating controls and in-book pages preserve v13 document geometry. */
+.pickerTools{position:absolute;right:18px;top:18px;margin:0;gap:5px;max-width:calc(100% - 30px);justify-content:flex-end}
+.pickerTools button{font-size:11px;padding:7px 9px;box-shadow:2px 2px #17131f}
+body:not(.picking) .pickerTools #savePicked,body:not(.picking) .pickerTools #undoPick{display:none}
+.pickerHint{position:absolute;left:15px;right:15px;bottom:66px;z-index:6;background:#fff9eeee;border:1px solid #17131f;padding:5px 8px;margin:0;pointer-events:none}
+.pickAnchor{position:absolute;width:0;height:0;pointer-events:none;visibility:hidden}
+.paletteTabs{display:flex;align-items:center;gap:10px;min-width:0}
+.paletteTabs button{padding:3px 0;border:0;background:none;color:#766575;font:700 12px/1.3 sans-serif;white-space:nowrap}
+.paletteTabs button[aria-selected=true]{color:#b60067;box-shadow:0 3px #f5008f}
+.paletteTabs button:hover{color:#17131f;translate:0 -1px}
+.pickCount{font:700 10px monospace}
+.bookBody{position:relative}
+.pickPanel{position:absolute;inset:0;margin:0;padding:14px 0 0;border:0;box-shadow:none;rotate:0;background:transparent;display:flex;flex-direction:column;overflow:hidden}
+.pickPanel[hidden]{display:none!important}
+.pickPanel h3{font-size:25px;margin-bottom:8px}
+.pickPanel .pickList{max-height:none;min-height:0;align-content:flex-start;flex:1;overflow:auto}
+.pickPanel .pickActions{margin-top:auto;padding-top:12px;flex-shrink:0}
+.pickPanel .pickEmpty{margin-bottom:auto}
+.pickPanel .pickItem{width:calc(50% - 5px)}
+.pickPanel .pickCopy{flex:1;min-width:0;flex-wrap:wrap}
+.pickPanel .pickChip{width:100%;height:46px}
+.pickPanel .pickItem>button:last-child{align-self:flex-start}
+.speechText.pickSpeech{display:block!important}
+.swatchDialog{width:min(560px,calc(100vw - 32px));padding:24px;background:#fff9ee;color:#17131f;border:3px solid #17131f;box-shadow:7px 7px #f5008f;max-height:85vh;overflow:auto}
+.swatchDialog::backdrop{background:#17131f99}
+.swatchDialog h2{font:italic 700 30px Georgia;margin:0 0 10px}
+.swatchDialog p{font:13px/1.7 sans-serif}
+.nativeLinks{display:flex;gap:12px;margin:20px 0}
+.nativeLinks a{flex:1;background:#17131f;color:#fff9ee;border:2px solid #17131f;box-shadow:3px 4px #10c9cf;text-decoration:none;padding:14px 10px;text-align:center;font:bold 15px sans-serif}
+.nativeLinks a:first-child{background:#f5008f;box-shadow:3px 4px #fff02a}
+.nativeLinks a:hover{transform:translateY(-2px)}
+.nativeLinks small{display:block;font:11px sans-serif;margin-top:6px}
+.exportFoot{display:flex;justify-content:space-between;gap:10px;margin-top:18px}
+.exportFoot button{border:1px solid #17131f;background:#fff9ee;padding:9px;font:700 12px sans-serif}
+.swatchDialog .exportNote{color:#67596b;font-size:12px}
+@media(max-width:650px){.pickPanel{margin:0}.pickerTools{right:14px;top:14px}.paletteTabs{gap:9px}.paletteTabs button{font-size:11px}.pickPanel .pickItem{width:100%}.pickPanel .pickChip{width:24px;height:30px}.nativeLinks{flex-wrap:wrap}}

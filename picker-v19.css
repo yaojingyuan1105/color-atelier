@@ -1,0 +1,6 @@
+.pickHeading{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px}
+.pickHeading h3{margin:0!important}
+.pickHeading #clearCollection{border:0;background:transparent;color:#9b0059;font:700 11px sans-serif;text-decoration:underline;text-underline-offset:3px;padding:5px;flex-shrink:0}
+.pickPanel .pickMeta.storageWarning{color:#9b0059;font-weight:bold}
+.clearCollectionDialog #confirmClear{background:#17131f;color:#fff9ee;border:2px solid #f5008f}
+@media(max-width:440px){.pickHeading h3{font-size:20px}}

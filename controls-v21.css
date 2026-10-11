@@ -1,0 +1,41 @@
+/* One caption row, a stable left-hand picker, and a shared palette action row. */
+.poster .caption{gap:8px;min-height:43px;padding-top:9px}
+.poster .caption .pickerTools{order:-1;gap:6px;align-items:center}
+.poster .pickerTools button{height:32px;min-height:32px;padding:4px 6px;font:700 12px/18px sans-serif;border:1.5px solid var(--ink);box-shadow:2px 2px var(--cyan);display:inline-flex;align-items:center;justify-content:center;gap:4px;border-radius:0;transform:none}
+.poster .pickerTools #togglePicker{width:68px;flex:0 0 68px}
+.poster .pickerTools #togglePicker svg{width:17px;height:17px;flex:none;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.poster .pickerTools #savePicked{min-width:58px}
+.poster .pickerTools #undoPick,.poster .pickerTools #pickerHelp{width:30px;padding:0}
+.poster .pickerTools #undoPick{font-size:18px}
+.poster .pickerTools button:disabled{box-shadow:none}
+.poster .pickerTools button:not(:disabled):hover{transform:none;box-shadow:2px 3px var(--pink)}
+.poster .caption .changeImage{min-height:32px;padding:4px 3px;font:700 12px/18px sans-serif}
+.poster .caption #imageName{font-size:12px}
+.source:not(.dragging)::after{display:none}
+.sourceTape{position:absolute;right:-10px;bottom:-16px;width:56px;height:16px;rotate:12deg;z-index:5;pointer-events:none;border:1px solid var(--paper);background:repeating-linear-gradient(90deg,var(--ink) 0 6px,var(--paper) 6px 12px)}
+.source.dragging .sourceTape{visibility:hidden}
+
+/* Parent each heart to its colored paint, regardless of the card's column split. */
+.poster .samples .swatchGroup .swatch .paint .swatchSave{left:auto;right:5px;top:5px;width:28px;height:28px}
+.poster .samples .swatchGroup .swatch .paint>span{left:5px;right:auto;bottom:5px}
+.poster .samples .swatchGroup .swatch .values small{font-size:11px;line-height:14px;color:#514951;white-space:normal}
+
+.poster .bookActions,.poster .pickPanel .pickActions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:12px}
+.poster .bookActions button,.poster .pickPanel .pickActions #copyPicked,.poster .pickPanel .pickActions #exportPicked{width:100%;min-width:0;height:43px;min-height:43px;padding:8px 6px;border:2px solid var(--ink);font:700 13px/18px sans-serif;white-space:nowrap;border-radius:0;box-shadow:3px 4px var(--cyan);margin:0}
+.poster .bookActions #copyColors,.poster .pickPanel .pickActions #copyPicked{background:var(--ink);color:var(--paper)}
+.poster .bookActions #saveCard,.poster .pickPanel .pickActions #exportPicked{background:var(--pink);color:white;box-shadow:3px 4px var(--yellow)}
+.poster .pickPanel .pickActions{row-gap:8px;border-top:0;padding-top:8px}
+.poster .pickPanel .pickActions #undoCollection{grid-column:1/-1;justify-self:start;min-height:26px;height:26px;padding:2px 0;border:0;background:transparent;font:700 12px/18px sans-serif;box-shadow:none;color:#655361}
+.poster .pickPanel .pickActions #copyPicked:disabled,.poster .pickPanel .pickActions #exportPicked:disabled{opacity:.45;box-shadow:none}
+.poster .pickMeta,.poster .pickItem button{font-size:12px}
+
+/* Retain the established row height and decoration spacing, lower only visual weight. */
+.poster .sourceControls .auto{background:var(--paper);color:var(--ink);font-size:14px;box-shadow:3px 3px var(--cyan)}
+.poster .sourceControls .auto:not(:disabled):hover{background:#fff8d8;box-shadow:4px 4px var(--pink)}
+.poster .sourceControls .auto.busy:after{border-color:var(--pink);border-right-color:transparent}
+@media(max-width:650px){
+ .poster .caption{gap:6px}
+ .poster .paletteTabs button{font-size:12px}
+ .poster .bookActions,.poster .pickPanel .pickActions{column-gap:10px}
+ .poster .bookActions button,.poster .pickPanel .pickActions #copyPicked,.poster .pickPanel .pickActions #exportPicked{font-size:12px}
+}

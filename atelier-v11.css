@@ -1,0 +1,53 @@
+
+@font-face{font-family:RyukiMaru;src:url('./zen-maru-gothic-bold-v11.ttf') format('truetype');font-weight:700;font-display:swap}
+.nameplateWrap{position:relative;isolation:isolate;margin:24px 1px 0 3px}
+.stripeBacking{position:absolute;inset:-7px -5px 5px -5px;background:repeating-linear-gradient(115deg,#171320 0 7px,#fff9ee 7px 14px);border:1.5px solid #171320;rotate:1.5deg;z-index:0;pointer-events:none}
+.poster .business{margin:0;width:100%;max-width:none;padding:15px 14px 13px!important;border:2px solid #171320;rotate:-1.4deg;transform:none;background:#fff9ee;box-shadow:5px 5px #f5008f;z-index:1}
+.poster .business:before{content:none}
+.poster .business:after{content:'';position:absolute;inset:5px;width:auto;height:auto;border:1px solid #17132038;background:none;z-index:-1;pointer-events:none}
+.poster .business:hover,.poster .business:focus-visible{transform:translateY(-4px);rotate:0deg;box-shadow:7px 9px #f5008f}
+.poster .nameFull{font:700 clamp(23px,9.1cqi,37px)/1.28 RyukiMaru,'Yu Gothic',sans-serif;display:flex;align-items:baseline;justify-content:space-between;gap:0;letter-spacing:-1.3px;white-space:nowrap;padding:0 7px 8px 1px;text-shadow:none;color:#5f366e}
+.nameFull .nameGlyph{display:inline-block;rotate:var(--angle,0deg);color:var(--name-ink,#543553)}
+.nameFull .nameDot{font-size:.56em;color:#e42c87;padding:0 1px}
+.nameFull .latinF{font:bold italic 1.1em Georgia,serif;color:#df2977;rotate:4deg}
+.poster .signatureRow{padding:0 0 7px;line-height:0}
+.poster .ryukiSignature{display:block;width:100%;height:auto;overflow:visible;font:700 52px 'Brush Script MT','Segoe Script',cursive;letter-spacing:-1px;rotate:-1deg;filter:none;-webkit-text-stroke:0;paint-order:normal}
+.ryukiSignature text{paint-order:stroke fill;stroke:#fff9ee;stroke-width:2;stroke-linejoin:round;filter:drop-shadow(.65px 1px 0 #17132090)}
+.poster .signatureRow:after{width:88%;height:2px;bottom:0;background:#e92689;transform:scaleX(.35) rotate(-1deg)}
+.poster .business:hover .signatureRow:after,.poster .business:focus-visible .signatureRow:after{transform:scaleX(1) rotate(-1deg)}
+.nameFlourish{position:absolute;width:25px;height:25px;right:1px;bottom:-2px;fill:none;stroke:#e92689;stroke-width:2;rotate:-9deg;pointer-events:none}
+.poster .tagEyelet{width:12px;height:12px;top:-9px;right:15px;border-width:1.5px;box-shadow:2px 2px #c5ec21}
+.poster .tagEyelet:after{display:none}
+.poster .samples .swatchGroup-primary .swatch{min-height:var(--primary-height,108px)}
+.poster .samples .swatchGroup-primary .swatch .paint{height:var(--primary-height,108px)}
+.poster .sourceTitle,.poster .paletteTitle{text-shadow:2px 2px #f5008f;-webkit-text-stroke:3px #fff9ee}
+.poster .sourceTitle{font-size:39px}
+.poster .swatch:hover,.poster .swatch:focus-visible{box-shadow:2px 3px #17132070;outline:2px solid #171320;outline-offset:2px}
+.sweetChocolate{left:-7px;top:22px;rotate:-12deg}
+.sweetDonut{right:0;bottom:196px;width:91px;height:78px}
+.sweetPop{right:-3px;bottom:18px;rotate:11deg}
+.sweet .sweetGloss{stroke:#fff9ee;stroke-width:2.5;fill:none;stroke-linecap:round;opacity:.85}
+.exportDialog{width:min(960px,94vw);max-height:92vh;padding:0;border:2px solid #171320;background:#fff9ee;color:#171320}
+.exportDialog::backdrop{background:#171320b8}
+.exportHead{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:14px 18px;border-bottom:2px solid #171320}
+.exportHead strong{font:bold italic 24px Georgia}
+.exportHead button,.exportActions a{border:1px solid #171320;background:#171320;color:#fff9ee;padding:10px 14px;font-weight:700;text-decoration:none;cursor:pointer}
+.exportHead button:hover,.exportActions a:hover{background:#c00070}
+.exportImageWrap{max-height:64vh;overflow:auto;padding:12px}
+#exportPreview{display:block;width:100%;height:auto;border:1px solid #17132030}
+.exportActions{display:flex;align-items:center;gap:16px;padding:12px 18px 18px}
+.exportActions a{background:#e60087;white-space:nowrap}
+.exportActions p{font-size:12px;line-height:1.6;margin:0}
+@media(max-width:650px){
+ .nameplateWrap{width:min(100%,354px);margin:21px auto 0}
+ .poster .business{padding:13px 12px 12px!important}
+ .poster .nameFull{font-size:clamp(23px,8.1cqi,31px);padding-bottom:7px}
+ .poster .sourceTitle{font-size:35px}
+ .sweetChocolate{left:-1px;top:28px}
+ .sweetDonut{width:77px;height:66px;bottom:186px;right:1px}
+ .sweetPop{width:65px;height:118px;right:18px;bottom:12px}
+ .exportActions{align-items:flex-start;flex-direction:column;gap:10px}
+}
+@media(min-width:651px) and (max-width:1080px){.poster .nameFull{font-size:8.2cqi;letter-spacing:-1px}.poster .business{padding:13px 10px!important}.sweetDonut{width:74px;height:64px}}
+.viewport.overview .poster .nameFull,.viewport.overview .nameFull{font-size:27px}
+body.motionOff .poster .business:hover,body.motionOff .poster .business:focus-visible{transform:none;rotate:-1.4deg}

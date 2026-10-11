@@ -1,0 +1,47 @@
+/* v16: use the existing caption edge; no extra row and no controls over image pixels. */
+.poster .caption{gap:8px}
+.poster .caption #imageName{flex:1;max-width:none;min-width:0}
+.poster .pickerTools{position:static;flex:none;max-width:none;margin:0;gap:5px;flex-wrap:nowrap;justify-content:flex-end}
+.poster .pickerTools button{min-height:28px;padding:4px 8px;font:700 11px/16px sans-serif;white-space:nowrap;box-shadow:1px 2px #17131f}
+.poster .pickerTools #togglePicker[aria-pressed=true]{box-shadow:2px 2px #f5008f}
+body.picking .caption #imageName,body.picking .caption .changeImage{display:none}
+body.picking .caption .pickerTools{width:100%;justify-content:flex-end}
+body.picking .pickerTools #togglePicker{margin-right:auto}
+body:not(.picking) .pickerTools #pickerHelp{display:none}
+.poster .pickerHint{position:absolute;inset:auto;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);padding:0;border:0;margin:-1px;white-space:nowrap}
+.poster .paletteTabs{gap:5px}
+.poster .paletteTabs button{min-height:32px;padding:5px 9px;font-size:13px;line-height:18px;background:#f1e6dd;border:1px solid #8c7f85;color:#544553;box-shadow:none;transition:background .15s,box-shadow .15s,translate .15s}
+.poster .paletteTabs button[aria-selected=true]{background:#17131f;border-color:#17131f;color:#fff02a;box-shadow:2px 3px #f5008f}
+.poster .paletteTabs button:hover{translate:0 -1px}
+.poster .pickCount{display:inline-block;min-width:13px;font-size:11px}
+.poster .bookMeta{gap:6px}
+.poster .samples .swatchCopy{position:absolute;inset:0;width:100%;height:100%;padding:0;margin:0;border:0;background:transparent;box-shadow:none;transform:none;translate:none;cursor:copy;z-index:1}
+.poster .samples .swatchCopy:hover{translate:none;transform:none;box-shadow:none}
+.poster .samples .swatchSave{position:absolute;top:5px;right:5px;z-index:2;width:27px;height:26px;padding:0;display:grid;place-items:center;border:1px solid #17131f;background:#fff9ee;color:#b60067;font:700 21px/1 Arial;box-shadow:1px 2px #17131f;cursor:pointer;transition:transform .15s,background .15s}
+.poster .samples .swatchSave[aria-pressed=true]{background:#f5008f;color:white}
+.poster .samples .swatchSave:hover{transform:rotate(-7deg) scale(1.06);translate:none}
+.poster .samples .swatchGroup-primary .swatchSave{right:calc(48% + 5px)}
+.poster .samples .swatchGroup-secondary .swatch:only-child .swatchSave{right:calc(58% + 5px)}
+.poster .samples .swatchGroup-accent .swatchSave{left:5px;right:auto}
+.poster .pickPanel.isEmpty .pickList{display:none}
+.poster .pickEmpty{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;align-items:center;justify-content:safe center;gap:9px;margin:12px 0 15px;padding:15px 10px;text-align:center;border:1px dashed #c8a9b6;background:radial-gradient(circle,#f5008f18 1px,transparent 1.7px) 0 0/14px 14px}
+.poster .pickEmpty[hidden]{display:none!important}
+.poster .pickEmpty svg{flex-shrink:0;width:140px;height:94px;filter:drop-shadow(3px 4px 0 #f5008f25);animation:emptyCardSway 5s ease-in-out infinite}
+.poster .pickEmpty strong{font:700 17px/1.5 'Zen Maru Gothic',sans-serif;color:#a80060}
+.poster .pickEmpty p{margin:0;font:12px/1.8 sans-serif;color:#655361}
+.poster .emptyActions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:7px}
+.poster .emptyActions button{border:1px solid #17131f;background:#fff9ee;padding:7px 9px;font:700 12px sans-serif;box-shadow:2px 3px #10cad5}
+.poster .emptyActions button:last-child{box-shadow:2px 3px #f5008f}
+.poster .pickActions{gap:6px;flex-wrap:wrap}
+.poster .pickActions button{padding:7px 8px;font-size:11px;min-height:30px}
+.poster .pickPanel .pickActions #exportPicked{margin-left:auto;background:#17131f;color:#fff02a;box-shadow:2px 2px #f5008f}
+.pickerHelpDialog h2{font-size:27px}
+@keyframes emptyCardSway{0%,70%,100%{transform:rotate(-3deg) translateY(0)}35%{transform:rotate(3deg) translateY(-4px)}}
+@media(max-width:650px){
+ .poster .caption{gap:6px}.poster .pickerTools button{padding:4px 7px}
+ .poster .paletteTabs button{padding:5px 7px;font-size:12px}
+ .poster .samples .swatchGroup-primary .swatchSave{right:calc(52% + 5px)}
+ .poster .pickEmpty svg{width:120px;height:81px}
+}
+@media(max-width:350px){.poster .paletteTabs button{font-size:11px;padding:5px}.poster .paletteTabs{gap:4px}.poster .samples .swatchGroup-primary .swatchSave{right:calc(57% + 5px)}}
+@media(prefers-reduced-motion:reduce){.poster .pickEmpty svg{animation:none}.poster .paletteTabs button,.poster .samples .swatchSave{transition:none}}

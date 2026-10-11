@@ -1,0 +1,13 @@
+/* The new work area lives only in the enlarged viewer; poster geometry is untouched. */
+.viewerPickerBar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px;min-height:37px}
+.viewerPickerBar>button{border:1.5px solid #17131f;background:#fff9ee;padding:8px 10px;font:bold 12px sans-serif;box-shadow:2px 2px #10cad5}
+.viewerPickerBar>button[aria-pressed=true]{background:#17131f;color:#fff02a;box-shadow:2px 2px #f5008f}
+.viewerResult{display:flex;align-items:center;gap:6px;flex:1;min-width:130px;font:12px monospace}
+.viewerResult .pickCode{font-size:16px}
+.viewerFeedback{flex-basis:100%;color:#9a0058;font-size:12px;min-height:16px}
+.viewerFeedback:empty{display:none}
+.imageDialog.viewerPicking .imageScroller{cursor:crosshair}
+.imageDialog.viewerPicking .imageScroller img{image-rendering:pixelated}
+.imageDialog .imageScroller:focus-visible{outline:2px dashed #f5008f;outline-offset:-3px}
+.imageDialog .pickLens{min-width:0}
+@media(max-width:440px){.imageDialog header{padding:8px;gap:6px}.imageDialog header div{gap:4px}.imageDialog header button{padding:6px}.viewerPickerBar{gap:6px}.viewerPickerBar>button{padding:8px}.viewerResult{min-width:82px;flex-wrap:wrap}.viewerResult .pickCode{font-size:14px}.imageDialog footer{padding:8px}}

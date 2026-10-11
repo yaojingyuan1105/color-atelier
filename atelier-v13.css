@@ -1,0 +1,38 @@
+/* v13: adaptive swatch groups and clearer comments */
+.poster .samples .swatchGroup-secondary .groupColors,
+.poster .samples .swatchGroup-accent .groupColors{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,126px),1fr));gap:10px}
+.poster .samples .swatchGroup-accent .swatch{max-width:none;width:100%;min-width:0}
+.poster .samples .swatchGroup-secondary .swatch:only-child{grid-column:1/-1;display:grid;grid-template-columns:42% 58%}
+.poster .samples .swatchGroup-secondary .swatch:only-child .paint{height:78px;border-bottom:0;border-right:1px solid var(--ink)}
+.poster .samples .swatchGroup-secondary .swatch:only-child .values{align-self:center;padding:10px}
+.poster .samples .swatchGroup .swatch .values small{white-space:nowrap;font-size:10px;letter-spacing:0;line-height:1.4}
+.poster .samples .swatchGroup-accent .swatch .values{padding:8px}
+.poster .samples .swatchGroup-accent .swatch .values b{font-size:14px}
+.poster .samples .swatchGroup-accent .swatch .paint{height:47px}
+.poster .samples .swatchGroup-primary .swatch{grid-template-columns:52% 48%}
+.poster .samples .swatchGroup-primary .swatch .values{padding:9px}
+.speech{left:-12px;right:auto;width:min(calc(100% + 12px),410px);min-height:105px}
+.speech svg{height:105px}
+.speechText{max-width:83%;margin:17px auto 0;padding:0;font-size:15px;line-height:1.5;min-height:45px;display:flex;align-items:center;justify-content:center;text-wrap:pretty}
+.sourceColumn{padding-top:120px}
+.sourceColumn:before{top:160px}
+.sourceArrow{top:72px}
+.caption #imageName{font-size:12px;max-width:65%;color:#514951}
+.caption #imageName:focus-visible{outline:2px solid #e60087;outline-offset:3px}
+.sweetPop .candyWrapper{stroke-width:1.6;stroke-linejoin:round}
+.sweetDonut{right:4px;bottom:150px;rotate:9deg}
+@media(max-width:650px){
+ .speech{left:-5px;top:12px;width:min(calc(100% + 10px),430px);height:105px}
+ .speech svg{height:105px}
+ .speechText{font-size:14px;line-height:1.5;max-width:81%;margin-top:16px;min-height:44px}
+ .sourceColumn{padding-top:126px}.sourceColumn:before{top:159px}.sourceArrow{top:93px}
+ .poster .samples .swatchGroup-secondary .groupColors,.poster .samples .swatchGroup-accent .groupColors{grid-template-columns:repeat(auto-fit,minmax(min(100%,118px),1fr));gap:9px}
+ .poster .samples .swatchGroup-primary .swatch{grid-template-columns:48% 52%}
+ .poster .samples .swatchGroup-primary .swatch .values{padding:8px}
+ .sweetDonut{bottom:131px;right:3px}
+ .caption #imageName{font-size:11px}
+}
+@media(min-width:651px) and (max-width:1080px){.sweetDonut{bottom:134px}}
+@media(max-width:350px){.poster .samples .swatchGroup-primary .swatch{grid-template-columns:43% 57%}.poster .samples .swatchGroup-primary .swatch .values b{font-size:14px}.poster .samples .swatchGroup .swatch .values small{font-size:9px}}
+.viewport.overview .sourceColumn{padding-top:120px}.viewport.overview .sourceColumn:before{top:160px}
+
